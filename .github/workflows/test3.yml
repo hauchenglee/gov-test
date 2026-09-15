@@ -1,0 +1,22 @@
+name: Test3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "==== NTPC ===="
+          curl -I -m 15 https://www.ntpc.gov.tw/ || true
+
+          echo "==== PTHG ===="
+          curl -I -m 15 https://www.pthg.gov.tw/ || true
+
+          echo "==== TAIPEI ===="
+          curl -I -m 15 https://www.taipei.gov.tw/ || true
+
+          echo "==== GOV ===="
+          curl -I -m 15 https://www.gov.tw/ || true
