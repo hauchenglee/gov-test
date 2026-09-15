@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test PTHG
+        run: |
+          curl -I https://www.pthg.gov.tw/
+
+      - name: Test NTPC
+        run: |
+          curl -I https://www.ntpc.gov.tw/
