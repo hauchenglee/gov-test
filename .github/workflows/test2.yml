@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show IP
+        run: |
+          curl https://ipinfo.io/json
+
+      - name: Test PTHG
+        run: |
+          curl -v --connect-timeout 15 https://www.pthg.gov.tw/
+
+      - name: Test NTPC
+        run: |
+          curl -v --connect-timeout 15 https://www.ntpc.gov.tw/
